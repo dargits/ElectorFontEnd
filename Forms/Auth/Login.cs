@@ -187,7 +187,20 @@ namespace Elector.Forms.Auth
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show(
+                "Bạn có muốn thoát không ?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+                );
+            if (result == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

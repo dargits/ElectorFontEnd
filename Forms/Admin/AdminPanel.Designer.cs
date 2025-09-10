@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             lblTitle = new Label();
             btnCreatePoll = new Button();
             btnRefresh = new Button();
@@ -33,13 +34,14 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblTitle.ForeColor = Color.DarkBlue;
             lblTitle.Location = new Point(20, 20);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(218, 41);
+            lblTitle.Size = new Size(209, 41);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Bảng Quản Trị";
+            lblTitle.Text = "Quản Trị Viên";
             // 
             // btnCreatePoll
             // 
@@ -50,7 +52,7 @@
             btnCreatePoll.Name = "btnCreatePoll";
             btnCreatePoll.Size = new Size(130, 45);
             btnCreatePoll.TabIndex = 1;
-            btnCreatePoll.Text = "Tạo Bình Chọn";
+            btnCreatePoll.Text = "Tạo Mới";
             btnCreatePoll.UseVisualStyleBackColor = false;
             btnCreatePoll.Click += btnCreatePoll_Click;
             // 
@@ -118,7 +120,7 @@
             // panelLoading
             // 
             panelLoading.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelLoading.BackColor = Color.White;
+            panelLoading.BackColor = Color.FromArgb(0, 0, 0, 0);
             panelLoading.Controls.Add(lblLoading);
             panelLoading.Location = new Point(20, 150);
             panelLoading.Name = "panelLoading";
@@ -144,12 +146,17 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            BackgroundImage = Properties.Resources.background_6008188_960_720;
             ClientSize = new Size(1178, 620);
             Controls.Add(panelLoading);
             Controls.Add(panelHeader);
             Controls.Add(lblPollCount);
             Controls.Add(flowLayoutPanelPolls);
             Controls.Add(lblTitle);
+            ForeColor = SystemColors.ControlText;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
             MinimumSize = new Size(1000, 600);
             Name = "AdminPanel";
             StartPosition = FormStartPosition.CenterScreen;

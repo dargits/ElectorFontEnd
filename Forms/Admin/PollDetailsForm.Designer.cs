@@ -22,6 +22,7 @@ namespace Elector.Forms
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PollDetailsForm));
             lblPollTitle = new Label();
             lblPollId = new Label();
             lblDescription = new Label();
@@ -37,9 +38,10 @@ namespace Elector.Forms
             // lblPollTitle
             // 
             lblPollTitle.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            lblPollTitle.Font = new System.Drawing.Font("Segoe UI", 16F, FontStyle.Bold);
+            lblPollTitle.BackColor = Color.FromArgb(0, 0, 0, 0);
+            lblPollTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblPollTitle.ForeColor = Color.DarkBlue;
-            lblPollTitle.Location = new Point(20, 20);
+            lblPollTitle.Location = new Point(20, 25);
             lblPollTitle.Name = "lblPollTitle";
             lblPollTitle.Size = new Size(560, 40);
             lblPollTitle.TabIndex = 0;
@@ -48,6 +50,7 @@ namespace Elector.Forms
             // lblPollId
             // 
             lblPollId.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblPollId.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblPollId.Font = new Font("Segoe UI", 10F);
             lblPollId.ForeColor = Color.Gray;
             lblPollId.Location = new Point(480, 65);
@@ -60,6 +63,7 @@ namespace Elector.Forms
             // lblDescription
             // 
             lblDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblDescription.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblDescription.Font = new Font("Segoe UI", 11F);
             lblDescription.Location = new Point(20, 70);
             lblDescription.Name = "lblDescription";
@@ -73,7 +77,7 @@ namespace Elector.Forms
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblStatus.Location = new Point(15, 15);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(93, 28);
+            lblStatus.Size = new Size(108, 28);
             lblStatus.TabIndex = 3;
             lblStatus.Text = "Trạng thái";
             // 
@@ -84,13 +88,14 @@ namespace Elector.Forms
             lblCreatedAt.ForeColor = Color.Gray;
             lblCreatedAt.Location = new Point(15, 50);
             lblCreatedAt.Name = "lblCreatedAt";
-            lblCreatedAt.Size = new Size(118, 23);
+            lblCreatedAt.Size = new Size(111, 23);
             lblCreatedAt.TabIndex = 4;
             lblCreatedAt.Text = "Tạo lúc: ngày";
             // 
             // lblOptionsCount
             // 
             lblOptionsCount.AutoSize = true;
+            lblOptionsCount.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblOptionsCount.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblOptionsCount.Location = new Point(20, 210);
             lblOptionsCount.Name = "lblOptionsCount";
@@ -102,7 +107,7 @@ namespace Elector.Forms
             // 
             flowLayoutPanelOptions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanelOptions.AutoScroll = true;
-            flowLayoutPanelOptions.BackColor = Color.White;
+            flowLayoutPanelOptions.BackColor = Color.FromArgb(0, 0, 0, 0);
             flowLayoutPanelOptions.BorderStyle = BorderStyle.FixedSingle;
             flowLayoutPanelOptions.Location = new Point(20, 250);
             flowLayoutPanelOptions.Name = "flowLayoutPanelOptions";
@@ -142,6 +147,7 @@ namespace Elector.Forms
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            BackgroundImage = Properties.Resources.background_6008188_960_720;
             ClientSize = new Size(600, 570);
             Controls.Add(panel1);
             Controls.Add(btnClose);
@@ -150,12 +156,14 @@ namespace Elector.Forms
             Controls.Add(lblDescription);
             Controls.Add(lblPollId);
             Controls.Add(lblPollTitle);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             MinimumSize = new Size(500, 400);
             Name = "PollDetailsForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Chi tiết Bình chọn";
             panel1.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

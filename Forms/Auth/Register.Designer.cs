@@ -34,13 +34,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             lblUsername = new Label();
             txtUsername = new TextBox();
             lblPassword = new Label();
             txtPassword = new TextBox();
             btnLogin = new Button();
             label1 = new Label();
-            label2 = new Label();
             backgrPanel = new Panel();
             showmessage = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -48,14 +48,16 @@
             btnRegister = new Button();
             txtFullName = new TextBox();
             label3 = new Label();
+            label2 = new Label();
             backgrPanel.SuspendLayout();
             SuspendLayout();
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
+            lblUsername.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblUsername.Font = new Font("Segoe UI", 12F);
-            lblUsername.Location = new Point(339, 119);
+            lblUsername.Location = new Point(354, 158);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(98, 28);
             lblUsername.TabIndex = 0;
@@ -64,7 +66,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 12F);
-            txtUsername.Location = new Point(478, 119);
+            txtUsername.Location = new Point(478, 152);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 34);
             txtUsername.TabIndex = 1;
@@ -72,8 +74,9 @@
             // lblPassword
             // 
             lblPassword.AutoSize = true;
+            lblPassword.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblPassword.Font = new Font("Segoe UI", 12F);
-            lblPassword.Location = new Point(339, 212);
+            lblPassword.Location = new Point(354, 261);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(98, 28);
             lblPassword.TabIndex = 2;
@@ -82,11 +85,11 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(479, 212);
+            txtPassword.Location = new Point(479, 255);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(300, 34);
             txtPassword.TabIndex = 3;
-            txtPassword.PasswordChar = '*'; // Thêm dòng này
             // 
             // btnLogin
             // 
@@ -106,16 +109,6 @@
             label1.Name = "label1";
             label1.Size = new Size(0, 20);
             label1.TabIndex = 5;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(479, 45);
-            label2.Name = "label2";
-            label2.Size = new Size(234, 41);
-            label2.TabIndex = 6;
-            label2.Text = "Elector Manager";
             // 
             // backgrPanel
             // 
@@ -143,12 +136,13 @@
             // viewPass
             // 
             viewPass.AutoSize = true;
-            viewPass.Location = new Point(478, 171);
+            viewPass.BackColor = Color.FromArgb(0, 0, 0, 0);
+            viewPass.Location = new Point(479, 307);
             viewPass.Name = "viewPass";
             viewPass.Size = new Size(127, 24);
             viewPass.TabIndex = 8;
             viewPass.Text = "Hiện mật khẩu";
-            viewPass.UseVisualStyleBackColor = true;
+            viewPass.UseVisualStyleBackColor = false;
             viewPass.CheckedChanged += viewPass_CheckedChanged;
             // 
             // btnRegister
@@ -156,7 +150,7 @@
             btnRegister.BackColor = Color.Blue;
             btnRegister.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRegister.ForeColor = SystemColors.ButtonHighlight;
-            btnRegister.Location = new Point(478, 356);
+            btnRegister.Location = new Point(478, 365);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(300, 45);
             btnRegister.TabIndex = 9;
@@ -167,7 +161,7 @@
             // txtFullName
             // 
             txtFullName.Font = new Font("Segoe UI", 12F);
-            txtFullName.Location = new Point(478, 285);
+            txtFullName.Location = new Point(478, 203);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new Size(300, 34);
             txtFullName.TabIndex = 10;
@@ -175,30 +169,46 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(0, 0, 0, 0);
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(339, 285);
+            label3.Location = new Point(364, 209);
             label3.Name = "label3";
             label3.Size = new Size(75, 28);
             label3.TabIndex = 11;
             label3.Text = "Họ tên:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(474, 66);
+            label2.Name = "label2";
+            label2.Size = new Size(304, 50);
+            label2.TabIndex = 14;
+            label2.Text = "Elector Manager";
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.background_6008188_960_720;
             ClientSize = new Size(1178, 517);
+            Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(txtFullName);
             Controls.Add(btnRegister);
             Controls.Add(viewPass);
             Controls.Add(backgrPanel);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(lblPassword);
             Controls.Add(txtUsername);
             Controls.Add(lblUsername);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
@@ -212,7 +222,6 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private Panel backgrPanel;
         private Label showmessage;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -220,5 +229,6 @@
         private Button btnRegister;
         private TextBox txtFullName;
         private Label label3;
+        private Label label2;
     }
 }
