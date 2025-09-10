@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|c:\\winapi\\elector\\domain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:domain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|c:\\winapi\\elector\\forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|C:\\winApi\\Elector\\forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,10 +48,34 @@
               "RelativeDocumentMoniker": "Domain.cs",
               "ToolTip": "C:\\winApi\\Elector\\Domain.cs",
               "RelativeToolTip": "Domain.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T16:59:11.455Z",
+              "WhenOpened": "2025-09-10T06:09:22.601Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreatePollForm.cs",
+              "DocumentMoniker": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs",
+              "RelativeDocumentMoniker": "Forms\\Admin\\CreatePollForm.cs",
+              "ToolTip": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs",
+              "RelativeToolTip": "Forms\\Admin\\CreatePollForm.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAkwAQBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T06:07:56.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreatePollForm.cs [Design]",
+              "DocumentMoniker": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs",
+              "RelativeDocumentMoniker": "Forms\\Admin\\CreatePollForm.cs",
+              "ToolTip": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs [Design]",
+              "RelativeToolTip": "Forms\\Admin\\CreatePollForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T06:07:37.311Z"
             }
           ]
         }

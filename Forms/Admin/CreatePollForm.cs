@@ -21,6 +21,10 @@ namespace Elector.Forms
         {
             InitializeComponent();
             optionTextBoxes = new List<TextBox>();
+
+            // Bật auto scroll cho panel options
+            panelOptions.AutoScroll = true;
+
             AddInitialOptions();
         }
 
@@ -35,7 +39,7 @@ namespace Elector.Forms
         {
             TextBox optionTextBox = new TextBox
             {
-                Width = panelOptions.Width - 100,
+                Width = panelOptions.Width - 100 - SystemInformation.VerticalScrollBarWidth, // Trừ độ rộng scrollbar
                 Height = 30,
                 Font = new Font("Segoe UI", 10),
                 Location = new Point(10, 10 + (optionTextBoxes.Count * 40)),
@@ -48,7 +52,7 @@ namespace Elector.Forms
                 Text = "Xóa",
                 Width = 60,
                 Height = 30,
-                Location = new Point(panelOptions.Width - 85, optionTextBox.Location.Y),
+                Location = new Point(panelOptions.Width - 85 - SystemInformation.VerticalScrollBarWidth, optionTextBox.Location.Y),
                 BackColor = Color.Firebrick,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
@@ -67,8 +71,9 @@ namespace Elector.Forms
             // Cập nhật visibility của tất cả nút xóa
             UpdateRemoveButtonsVisibility();
 
-            // Điều chỉnh chiều cao panel
-            panelOptions.Height = Math.Max(150, (optionTextBoxes.Count * 40) + 20);
+            // Không cần điều chỉnh chiều cao panel nữa vì đã có AutoScroll
+            // Chỉ cần đảm bảo panel có thể hiển thị tất cả controls
+            UpdatePanelScrollableArea();
         }
 
         private void RemoveOption_Click(object sender, EventArgs e)
@@ -86,8 +91,8 @@ namespace Elector.Forms
                 ReorganizeOptions();
                 UpdateRemoveButtonsVisibility();
 
-                // Điều chỉnh chiều cao panel
-                panelOptions.Height = Math.Max(150, (optionTextBoxes.Count * 40) + 20);
+                // Cập nhật vùng cuộn
+                UpdatePanelScrollableArea();
             }
         }
 
@@ -103,7 +108,7 @@ namespace Elector.Forms
                 {
                     if (control is Button btn && btn.Tag == optionTextBoxes[i])
                     {
-                        btn.Location = new Point(panelOptions.Width - 85, optionTextBoxes[i].Location.Y);
+                        btn.Location = new Point(panelOptions.Width - 85 - SystemInformation.VerticalScrollBarWidth, optionTextBoxes[i].Location.Y);
                         break;
                     }
                 }
@@ -118,6 +123,18 @@ namespace Elector.Forms
                 {
                     btn.Visible = optionTextBoxes.Count > 2;
                 }
+            }
+        }
+
+        private void UpdatePanelScrollableArea()
+        {
+            if (optionTextBoxes.Count > 0)
+            {
+                // Tính toán chiều cao cần thiết cho tất cả options
+                int requiredHeight = (optionTextBoxes.Count * 40) + 20;
+
+                // Thiết lập AutoScrollMinSize để panel biết cần scroll bao nhiều
+                panelOptions.AutoScrollMinSize = new Size(0, requiredHeight);
             }
         }
 
@@ -191,9 +208,9 @@ namespace Elector.Forms
             try
             {
                 var optionTexts = optionTextBoxes
-                    .Where(tb => !string.IsNullOrWhiteSpace(tb.Text))
-                    .Select(tb => tb.Text.Trim())
-                    .ToList();
+                  .Where(tb => !string.IsNullOrWhiteSpace(tb.Text))
+                  .Select(tb => tb.Text.Trim())
+                  .ToList();
 
                 var createRequest = new
                 {
@@ -207,12 +224,12 @@ namespace Elector.Forms
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await httpClient.PostAsync(
-                    $"{Domain.name}/api/polls/create", content);
+                  $"{Domain.name}/api/polls/create", content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Tạo bình chọn thành công!", "Thành công",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -221,13 +238,13 @@ namespace Elector.Forms
                 {
                     string errorContent = await response.Content.ReadAsStringAsync();
                     MessageBox.Show($"Không thể tạo bình chọn. Lỗi: {response.StatusCode}", "Lỗi",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi tạo bình chọn: {ex.Message}", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
