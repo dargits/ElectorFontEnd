@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\winApi\\Elector\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|c:\\winapi\\elector\\forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|c:\\winapi\\elector\\forms\\auth\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:forms\\auth\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|c:\\winapi\\elector\\domain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:domain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|C:\\winApi\\Elector\\forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:forms\\admin\\createpollform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|c:\\winapi\\elector\\forms\\auth\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEF892A-DCD1-4753-85E5-5B6F63B0EA98}|Elector.csproj|solutionrelative:forms\\auth\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,39 +38,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Domain.cs",
-              "DocumentMoniker": "C:\\winApi\\Elector\\Domain.cs",
-              "RelativeDocumentMoniker": "Domain.cs",
-              "ToolTip": "C:\\winApi\\Elector\\Domain.cs",
-              "RelativeToolTip": "Domain.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T06:09:22.601Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreatePollForm.cs",
-              "DocumentMoniker": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs",
-              "RelativeDocumentMoniker": "Forms\\Admin\\CreatePollForm.cs",
-              "ToolTip": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs",
-              "RelativeToolTip": "Forms\\Admin\\CreatePollForm.cs",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAkwAQBAAABAAAAAAAAAA==",
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\winApi\\Elector\\Forms\\Auth\\Login.cs",
+              "RelativeDocumentMoniker": "Forms\\Auth\\Login.cs",
+              "ToolTip": "C:\\winApi\\Elector\\Forms\\Auth\\Login.cs [Design]*",
+              "RelativeToolTip": "Forms\\Auth\\Login.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T06:07:56.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T07:29:25.822Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreatePollForm.cs [Design]",
-              "DocumentMoniker": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs",
-              "RelativeDocumentMoniker": "Forms\\Admin\\CreatePollForm.cs",
-              "ToolTip": "C:\\winApi\\Elector\\Forms\\Admin\\CreatePollForm.cs [Design]",
-              "RelativeToolTip": "Forms\\Admin\\CreatePollForm.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\winApi\\Elector\\Forms\\Auth\\Login.cs",
+              "RelativeDocumentMoniker": "Forms\\Auth\\Login.cs",
+              "ToolTip": "C:\\winApi\\Elector\\Forms\\Auth\\Login.cs*",
+              "RelativeToolTip": "Forms\\Auth\\Login.cs*",
+              "ViewState": "AgIAALgAAAAAAAAAAAAjwMIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T06:07:37.311Z"
+              "WhenOpened": "2025-09-10T07:07:00.218Z",
+              "EditorCaption": ""
             }
           ]
         }

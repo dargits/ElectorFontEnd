@@ -44,6 +44,10 @@ namespace Elector.Forms.Auth
                 return;
             }
 
+            // Sửa lỗi: dùng _userName và _password thay vì *userName và *password
+            _userName = _userName.Trim();
+            _password = _password.Trim();
+
             try
             {
                 // Tạo request
@@ -58,14 +62,25 @@ namespace Elector.Forms.Auth
                 {
                     string responseContent = await response.Content.ReadAsStringAsync();
                     var user = JsonConvert.DeserializeObject<User>(responseContent);
-
                     UserSession.Login(user);
+
                     backgrPanel.Visible = true;
                     showmessage.Visible = true;
                     backgrPanel.BackColor = Color.Green;
                     showmessage.Text = "Đăng nhập thành công.!";
-                    rmShowMess();
-                    if(user.IsAdmin ==  false)
+
+                    // Lưu thông tin đăng nhập vào file
+                    if(cbKeepLogin.Checked)
+                    {
+                        await SaveLoginInfoToFile(_userName, _password);
+                    }
+                    else
+                    {
+                        await SaveLoginInfoToFile("", "");
+                    }
+                        rmShowMess();
+
+                    if (user.IsAdmin == false)
                     {
                         Form home = new Forms.Home();
                         this.Hide();
@@ -73,11 +88,11 @@ namespace Elector.Forms.Auth
                     }
                     else
                     {
-                        Form admin = new Forms.AdminPanel(); 
+                        Form admin = new Forms.AdminPanel();
                         this.Hide();
                         admin.Show();
                     }
-                        return;
+                    return;
                 }
                 else
                 {
@@ -94,20 +109,70 @@ namespace Elector.Forms.Auth
             }
         }
 
-        private void Hiee_CheckedChanged(object sender, EventArgs e)
+        // Thêm method SaveLoginInfoToFile
+        private async Task SaveLoginInfoToFile(string username, string password)
         {
-            if (viewPass.Checked)
+            try
             {
-                txtPassword.PasswordChar = '\0';
+                // Đường dẫn đến file login.txt có sẵn (cùng cấp với Program.cs)
+                string filePath = @"C:\winApi\Elector\login.txt";
+
+                // Tạo nội dung để ghi
+                string loginInfo = $"Username: {username}\nPassword: {password}";
+
+                // Ghi vào file có sẵn
+                await File.WriteAllTextAsync(filePath, loginInfo, Encoding.UTF8);
+
+                Console.WriteLine("Đã lưu thông tin đăng nhập vào login.txt");
             }
-            else
+            catch (Exception ex)
             {
-                txtPassword.PasswordChar = '*';
+                Console.WriteLine($"Lỗi khi ghi file: {ex.Message}");
             }
         }
+        private void viewPass_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = viewPass.Checked ? '\0' : '*';
+        }
 
+        // Cách 2: Dùng synchronous method (không async)
         private void Login_Load(object sender, EventArgs e)
         {
+            try
+            {
+                // Đường dẫn đến file login.txt có sẵn
+                string filePath = @"C:\winApi\Elector\login.txt";
+
+                // Kiểm tra file có tồn tại không
+                if (!File.Exists(filePath))
+                {
+                    Console.WriteLine("File login.txt không tồn tại");
+                    return;
+                }
+
+                // Đọc nội dung file (synchronous)
+                string content = File.ReadAllText(filePath, Encoding.UTF8);
+                string[] lines = content.Split('\n');
+
+                string username = string.Empty;
+                string password = string.Empty;
+
+                foreach (string line in lines)
+                {
+                    if (line.StartsWith("Username: "))
+                        username = line.Substring("Username: ".Length).Trim();
+                    else if (line.StartsWith("Password: "))
+                        password = line.Substring("Password: ".Length).Trim();
+                }
+
+                txtUsername.Text = username;
+                txtPassword.Text = password;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi đọc file: {ex.Message}");
+            }
         }
         public void closeApp(object sender, EventArgs e)
         {
@@ -123,6 +188,11 @@ namespace Elector.Forms.Auth
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 

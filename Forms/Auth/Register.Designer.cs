@@ -86,7 +86,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(300, 34);
             txtPassword.TabIndex = 3;
-            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.PasswordChar = '*'; // Thêm dòng này
             // 
             // btnLogin
             // 

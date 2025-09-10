@@ -48,6 +48,8 @@ namespace Elector.Forms.Auth
                 btnRegister.BackColor = Color.Blue;
                 return;
             }
+            _userName = _userName.Trim();
+            _password = _password.Trim();
 
             try
             {

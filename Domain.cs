@@ -8,6 +8,8 @@ namespace Elector
 {
     internal static class Domain
     {
-        public static string name = "https://husuapi.onrender.com";
+        public static string render = "https://husuapi.onrender.com";
+        public static string local = "http://localhost:8080";
+        public static string name = render;
     }
 }

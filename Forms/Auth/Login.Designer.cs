@@ -1,4 +1,5 @@
-﻿namespace Elector.Forms.Auth
+﻿// Login.Designer.cs - Sửa phần InitializeComponent
+namespace Elector.Forms.Auth
 {
     partial class Login
     {
@@ -25,7 +26,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
 
         /// <summary>
@@ -37,7 +37,6 @@
             lblUsername = new Label();
             txtUsername = new TextBox();
             lblPassword = new Label();
-            txtPassword = new TextBox();
             btnLogin = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -46,6 +45,8 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             viewPass = new CheckBox();
             button1 = new Button();
+            txtPassword = new TextBox();
+            cbKeepLogin = new CheckBox();
             backgrPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,20 +78,10 @@
             lblPassword.TabIndex = 2;
             lblPassword.Text = "Mật khẩu:";
             // 
-            // txtPassword
-            // 
-            txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(478, 233);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(300, 34);
-            txtPassword.TabIndex = 3;
-            txtPassword.UseSystemPasswordChar = true;
-            // 
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnLogin.Location = new Point(478, 313);
+            btnLogin.Location = new Point(478, 325);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(300, 45);
             btnLogin.TabIndex = 4;
@@ -148,14 +139,14 @@
             viewPass.TabIndex = 8;
             viewPass.Text = "Hiện mật khẩu";
             viewPass.UseVisualStyleBackColor = true;
-            viewPass.CheckedChanged += Hiee_CheckedChanged;
+            viewPass.CheckedChanged += viewPass_CheckedChanged;
             // 
             // button1
             // 
             button1.BackColor = Color.Blue;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(479, 395);
+            button1.Location = new Point(478, 399);
             button1.Name = "button1";
             button1.Size = new Size(300, 45);
             button1.TabIndex = 9;
@@ -163,18 +154,39 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // txtPassword
+            // 
+            txtPassword.Font = new Font("Segoe UI", 12F);
+            txtPassword.Location = new Point(478, 239);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(300, 34);
+            txtPassword.TabIndex = 10;
+            // 
+            // cbKeepLogin
+            // 
+            cbKeepLogin.AutoSize = true;
+            cbKeepLogin.Location = new Point(562, 295);
+            cbKeepLogin.Name = "cbKeepLogin";
+            cbKeepLogin.Size = new Size(151, 24);
+            cbKeepLogin.TabIndex = 11;
+            cbKeepLogin.Text = "Giữ tôi đăng nhập";
+            cbKeepLogin.UseVisualStyleBackColor = true;
+            cbKeepLogin.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1178, 517);
+            Controls.Add(cbKeepLogin);
+            Controls.Add(txtPassword);
             Controls.Add(button1);
             Controls.Add(viewPass);
             Controls.Add(backgrPanel);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnLogin);
-            Controls.Add(txtPassword);
             Controls.Add(lblPassword);
             Controls.Add(txtUsername);
             Controls.Add(lblUsername);
@@ -199,5 +211,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private CheckBox viewPass;
         private Button button1;
+        private TextBox txtPassword;
+        private CheckBox cbKeepLogin;
     }
 }
