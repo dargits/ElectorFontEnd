@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             lblWelcome = new Label();
             lblUserAccount = new Label();
             btnRefresh = new Button();
@@ -34,21 +35,23 @@
             // lblWelcome
             // 
             lblWelcome.AutoSize = true;
+            lblWelcome.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblWelcome.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblWelcome.ForeColor = Color.DarkBlue;
             lblWelcome.Location = new Point(20, 20);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(142, 37);
+            lblWelcome.Size = new Size(174, 37);
             lblWelcome.TabIndex = 0;
             lblWelcome.Text = "Chào mừng!";
             // 
             // lblUserAccount
             // 
             lblUserAccount.AutoSize = true;
+            lblUserAccount.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblUserAccount.Font = new Font("Segoe UI", 10F);
             lblUserAccount.Location = new Point(20, 65);
             lblUserAccount.Name = "lblUserAccount";
-            lblUserAccount.Size = new Size(84, 23);
+            lblUserAccount.Size = new Size(86, 23);
             lblUserAccount.TabIndex = 1;
             lblUserAccount.Text = "Tài khoản:";
             // 
@@ -111,7 +114,7 @@
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             label1.Location = new Point(20, 140);
             label1.Name = "label1";
-            label1.Size = new Size(240, 32);
+            label1.Size = new Size(259, 32);
             label1.TabIndex = 7;
             label1.Text = "Danh sách bình chọn:";
             // 
@@ -131,7 +134,7 @@
             // panelLoading
             // 
             panelLoading.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelLoading.BackColor = Color.White;
+            panelLoading.BackColor = Color.FromArgb(0, 0, 0, 0);
             panelLoading.Controls.Add(lblLoading);
             panelLoading.Location = new Point(20, 180);
             panelLoading.Name = "panelLoading";
@@ -147,7 +150,7 @@
             lblLoading.ForeColor = Color.Gray;
             lblLoading.Location = new Point(480, 180);
             lblLoading.Name = "lblLoading";
-            lblLoading.Size = new Size(160, 37);
+            lblLoading.Size = new Size(137, 37);
             lblLoading.TabIndex = 0;
             lblLoading.Text = "Đang tải...";
             lblLoading.TextAlign = ContentAlignment.MiddleCenter;
@@ -157,6 +160,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            BackgroundImage = Properties.Resources.background_6008188_960_720;
             ClientSize = new Size(1178, 600);
             Controls.Add(panelLoading);
             Controls.Add(panelHeader);
@@ -164,6 +168,9 @@
             Controls.Add(flowLayoutPanelPolls);
             Controls.Add(lblUserAccount);
             Controls.Add(lblWelcome);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Elector Manager - Trang chủ";

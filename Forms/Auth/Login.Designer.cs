@@ -34,6 +34,7 @@ namespace Elector.Forms.Auth
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             lblUsername = new Label();
             txtUsername = new TextBox();
             lblPassword = new Label();
@@ -53,8 +54,9 @@ namespace Elector.Forms.Auth
             // lblUsername
             // 
             lblUsername.AutoSize = true;
+            lblUsername.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblUsername.Font = new Font("Segoe UI", 12F);
-            lblUsername.Location = new Point(339, 141);
+            lblUsername.Location = new Point(355, 172);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(98, 28);
             lblUsername.TabIndex = 0;
@@ -63,7 +65,7 @@ namespace Elector.Forms.Auth
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 12F);
-            txtUsername.Location = new Point(478, 135);
+            txtUsername.Location = new Point(479, 166);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 34);
             txtUsername.TabIndex = 1;
@@ -71,8 +73,9 @@ namespace Elector.Forms.Auth
             // lblPassword
             // 
             lblPassword.AutoSize = true;
+            lblPassword.BackColor = Color.FromArgb(0, 0, 0, 0);
             lblPassword.Font = new Font("Segoe UI", 12F);
-            lblPassword.Location = new Point(339, 239);
+            lblPassword.Location = new Point(355, 219);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(98, 28);
             lblPassword.TabIndex = 2;
@@ -81,7 +84,7 @@ namespace Elector.Forms.Auth
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnLogin.Location = new Point(478, 325);
+            btnLogin.Location = new Point(478, 339);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(300, 45);
             btnLogin.TabIndex = 4;
@@ -100,10 +103,11 @@ namespace Elector.Forms.Auth
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(479, 66);
+            label2.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(478, 62);
             label2.Name = "label2";
-            label2.Size = new Size(234, 41);
+            label2.Size = new Size(304, 50);
             label2.TabIndex = 6;
             label2.Text = "Elector Manager";
             // 
@@ -133,12 +137,13 @@ namespace Elector.Forms.Auth
             // viewPass
             // 
             viewPass.AutoSize = true;
-            viewPass.Location = new Point(479, 203);
+            viewPass.BackColor = Color.FromArgb(0, 0, 0, 0);
+            viewPass.Location = new Point(479, 267);
             viewPass.Name = "viewPass";
             viewPass.Size = new Size(127, 24);
             viewPass.TabIndex = 8;
             viewPass.Text = "Hiện mật khẩu";
-            viewPass.UseVisualStyleBackColor = true;
+            viewPass.UseVisualStyleBackColor = false;
             viewPass.CheckedChanged += viewPass_CheckedChanged;
             // 
             // button1
@@ -157,7 +162,7 @@ namespace Elector.Forms.Auth
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F);
-            txtPassword.Location = new Point(478, 239);
+            txtPassword.Location = new Point(479, 216);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(300, 34);
@@ -166,18 +171,20 @@ namespace Elector.Forms.Auth
             // cbKeepLogin
             // 
             cbKeepLogin.AutoSize = true;
-            cbKeepLogin.Location = new Point(562, 295);
+            cbKeepLogin.BackColor = Color.FromArgb(0, 0, 0, 0);
+            cbKeepLogin.Location = new Point(479, 297);
             cbKeepLogin.Name = "cbKeepLogin";
             cbKeepLogin.Size = new Size(151, 24);
             cbKeepLogin.TabIndex = 11;
             cbKeepLogin.Text = "Giữ tôi đăng nhập";
-            cbKeepLogin.UseVisualStyleBackColor = true;
+            cbKeepLogin.UseVisualStyleBackColor = false;
             cbKeepLogin.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.background_6008188_960_720;
             ClientSize = new Size(1178, 517);
             Controls.Add(cbKeepLogin);
             Controls.Add(txtPassword);
@@ -190,6 +197,9 @@ namespace Elector.Forms.Auth
             Controls.Add(lblPassword);
             Controls.Add(txtUsername);
             Controls.Add(lblUsername);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePollForm));
             lblTitle = new Label();
             txtTitle = new TextBox();
             lblDescription = new Label();
@@ -37,7 +38,7 @@
             lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblTitle.Location = new Point(20, 20);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(164, 28);
+            lblTitle.Size = new Size(188, 28);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Tiêu đề bình chọn:";
             // 
@@ -57,7 +58,7 @@
             lblDescription.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblDescription.Location = new Point(20, 100);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(67, 28);
+            lblDescription.Size = new Size(73, 28);
             lblDescription.TabIndex = 2;
             lblDescription.Text = "Mô tả:";
             // 
@@ -78,7 +79,7 @@
             lblOptions.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblOptions.Location = new Point(20, 210);
             lblOptions.Name = "lblOptions";
-            lblOptions.Size = new Size(149, 28);
+            lblOptions.Size = new Size(138, 28);
             lblOptions.TabIndex = 4;
             lblOptions.Text = "Các lựa chọn:";
             // 
@@ -141,7 +142,7 @@
             // panelLoading
             // 
             panelLoading.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelLoading.BackColor = Color.FromArgb(150, 255, 255, 255);
+            panelLoading.BackColor = Color.FromArgb(0, 0, 0, 0);
             panelLoading.Controls.Add(lblLoading);
             panelLoading.Location = new Point(0, 0);
             panelLoading.Name = "panelLoading";
@@ -157,7 +158,7 @@
             lblLoading.ForeColor = Color.Gray;
             lblLoading.Location = new Point(250, 240);
             lblLoading.Name = "lblLoading";
-            lblLoading.Size = new Size(200, 37);
+            lblLoading.Size = new Size(144, 37);
             lblLoading.TabIndex = 0;
             lblLoading.Text = "Đang tạo...";
             lblLoading.TextAlign = ContentAlignment.MiddleCenter;
@@ -179,11 +180,12 @@
             Controls.Add(txtTitle);
             Controls.Add(lblTitle);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "CreatePollForm";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Tạo Bình Chọn Mới";
+            Text = "Tạo Cuộc Bình Chọn Mới";
             panelLoading.ResumeLayout(false);
             panelLoading.PerformLayout();
             ResumeLayout(false);

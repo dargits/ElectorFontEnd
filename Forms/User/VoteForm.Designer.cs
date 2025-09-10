@@ -95,14 +95,14 @@
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label1.Location = new Point(20, 125);
             label1.Name = "label1";
-            label1.Size = new Size(196, 25);
+            label1.Size = new Size(221, 25);
             label1.TabIndex = 5;
             label1.Text = "Chọn lựa chọn của bạn:";
             // 
             // panelLoading
             // 
             panelLoading.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelLoading.BackColor = Color.FromArgb(150, 255, 255, 255);
+            panelLoading.BackColor = Color.FromArgb(0, 0, 0, 0);
             panelLoading.Controls.Add(lblLoading);
             panelLoading.Location = new Point(0, 0);
             panelLoading.Name = "panelLoading";
@@ -118,7 +118,7 @@
             lblLoading.ForeColor = Color.Gray;
             lblLoading.Location = new Point(270, 210);
             lblLoading.Name = "lblLoading";
-            lblLoading.Size = new Size(160, 37);
+            lblLoading.Size = new Size(144, 37);
             lblLoading.TabIndex = 0;
             lblLoading.Text = "Đang gửi...";
             lblLoading.TextAlign = ContentAlignment.MiddleCenter;
